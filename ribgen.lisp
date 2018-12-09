@@ -11,8 +11,8 @@
             ((eq the-atom :float) "~f")
             ((eq the-atom :int) "~d")
             ((eq the-atom :params) "~a")
-            ((eq the-atom :float-list) "~{~f~^ ~}")
-            ((eq the-atom :int-list) "~{~d~^ ~}")
+            ((eq the-atom :float-list) "[~{~f~^ ~}]")
+            ((eq the-atom :int-list) "[~{~d~^ ~}]")
             (t "~a"))))
 
   (defun symbol-to-variable-name (symb)
