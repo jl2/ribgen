@@ -6,7 +6,7 @@
   (:use #:cl)
   (:export 
    :rdeclare
-   :rformat
+   :ri-format
    :begin
    :end
    :world-begin

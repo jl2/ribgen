@@ -46,11 +46,14 @@
 
   (rman-named-function rdeclare "Declare" (name :string) (declaration :string))
 
-  (rman-named-function rformat "Format" (x-resolution :int) (y-resolution :int) (pixel-aspect-ratio :float))
+  (rman-named-function ri-format "Format" (x-resolution :int) (y-resolution :int) (pixel-aspect-ratio :float))
 
-  (rman-function begin (fname :string))
+  (defun begin (stream fname)
+    (declare (ignore stream fname)))
 
-  (rman-function end)
+  (defun end (stream)
+    (declare (ignore stream)))
+
   (rman-function world-begin)
   (rman-function world-end)
   (rman-function transform-begin)
@@ -71,7 +74,7 @@
   (rman-function depth-of-field (f-stop :float) (focal-length :float) (focal-distance :float))
   (rman-function display (name :string) (type :string) (mode :string) (parameters :parameters))
   (rman-function exposure (gain :float) (gamma :float))
-  ;;(rman-function format (x-resolution :int) (y-resolution :int) (pixel-aspect-ratio :float))
+  (rman-function ri-format (x-resolution :int) (y-resolution :int) (pixel-aspect-ratio :float))
 
   (rman-function frame-aspect-ratio (ratio :float))
   (rman-function frame-begin (num :int))

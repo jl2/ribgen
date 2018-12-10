@@ -1,0 +1,13 @@
+(in-package #:ribgen-examples)
+
+(defun sphere (rib-file-name tif-file-name)
+  (alexandria:with-output-to-file (ribs rib-file-name :if-exists :supersede)
+    (ribgen:begin ribs rib-file-name)
+    (ribgen:frame-begin ribs 0)
+    (ribgen:display  ribs tif-file-name "file" "rgba")
+    (ribgen:ri-format ribs 1200 1200 1.0)
+    (ribgen:world-begin ribs )
+    (ribgen:sphere ribs 1.0 -1.0 1.0 360.0)
+    (ribgen:world-end ribs)
+    (ribgen:frame-end ribs)
+    (ribgen:end ribs)))
